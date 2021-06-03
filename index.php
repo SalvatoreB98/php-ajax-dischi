@@ -16,7 +16,7 @@ include "data.php"
     <main>
         <div class="my-container">
             <div class="header">
-              
+            <h1>My albums</h1>
             </div>
             <div class="albums-container">
                 <?php foreach ($albums as $album) {
