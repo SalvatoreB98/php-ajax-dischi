@@ -13,24 +13,10 @@ include "data.php"
 </head>
 
 <body>
-    <main id="vueContainer">
+    <main>
         <div class="my-container">
             <div class="header">
-                <h1> <i class="fa fa-music" aria-hidden="true"></i> My albums </h1>
-                <div>
-                    <select @change="onChangeSort()" name="ordina" v-model='selectedOrder'>
-                        <option disabled value="">Ordina per</option>
-                        <option value="random"> Casuale / Reset</option>
-                        <option value="yearInc"> Dal più recente </option>
-                        <option value="yearDec"> Dal meno recente </option>
-
-                    </select>
-                    <select @change="onChange()" name="filtra" v-model="selected">
-                        <option disabled value="">Filtra per genere</option>
-                        <option value="all"> Tutti gli album </option>
-                        <option v-for="element in genres" :value="element"> {{element}} </option>
-                    </select>
-                </div>
+              
             </div>
             <div class="albums-container">
                 <?php foreach ($albums as $album) {
