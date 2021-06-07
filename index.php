@@ -17,6 +17,24 @@ include "data.php"
         <div class="my-container">
             <div class="header">
                 <h1>My albums</h1>
+                <form>
+                    <select name="genre" id="genre">
+                        <option disabled>Filtra per genere</option>
+                        <?php
+                        $filters = [];
+                        foreach ($albums as $key => $album) {
+                            if(!in_array($album["genre"],$filters)){
+                                $filters[] =  $album["genre"];
+                                $filter = $album["genre"];
+                                echo '<option value="'. $filter .'">'. $album["genre"] .'</option>';
+                            }
+                        ?>
+                        <?php
+                        }
+                        ?>
+                    </select>
+                    <button class="btn">Filtra</button>
+                </form>
             </div>
             <div class="albums-container">
                 <?php foreach ($albums as $album) {
