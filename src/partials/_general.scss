@@ -14,7 +14,7 @@ select{
     font-size: 17px;
     padding: 5px;
     cursor: pointer;
-    border: none
+    border: none;
 }
 /* CLASSES */
 .my-container{
@@ -58,7 +58,7 @@ h1{
 }
 .albums-container{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     flex-wrap: wrap;
     padding: 25px 0px;
 }
