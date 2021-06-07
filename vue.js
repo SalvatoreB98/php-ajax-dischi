@@ -2,7 +2,8 @@ window.addEventListener("load",()=>{
     const app = new Vue({
         el: '#root',
         data: {
-            albums : []
+            albums : [],
+            filteredAlbums: []
         },
         mounted(){
             axios.get("server.php").then((resp)=>{

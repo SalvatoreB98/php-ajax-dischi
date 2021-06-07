@@ -19,26 +19,33 @@ include "data.php"
     <main id="root">
         <div class="my-container">
             <div class="header">
-            <h1>My albums</h1>
+                <h1>My albums</h1>
+                <div>
+                Filtra per genere:
+                <select @change="onChange()" name="filtra">
+                    <option disabled value="">Filtra per genere</option>
+                    <option value="all"> Tutti gli album </option>
+                    <option>  </option>
+                </select>
+                </div>
             </div>
             <div class="albums-container">
-              
-                    <div v-for="album in albums" class="album">
-                        <div class="cover-container">
-                            <img :src="album.poster" alt="">
+                <div v-for="album in albums" class="album">
+                    <div class="cover-container">
+                        <img :src="album.poster" alt="">
+                    </div>
+                    <div class="specs">
+                        <div class="title">
+                            <strong> {{album.title}} </strong>
                         </div>
-                        <div class="specs">
-                            <div class="title">
-                                <strong> {{album.title}} </strong>
-                            </div>
-                            <div class="artist">
-                               {{album.author}}
-                            </div>
-                            <div class="year">
-                                {{album.year}}
-                            </div>
+                        <div class="artist">
+                            {{album.author}}
+                        </div>
+                        <div class="year">
+                            {{album.year}}
                         </div>
                     </div>
+                </div>
                 <?php
 
                 ?>

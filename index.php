@@ -16,28 +16,51 @@ include "data.php"
     <main>
         <div class="my-container">
             <div class="header">
-            <h1>My albums</h1>
+                <h1>My albums</h1>
             </div>
             <div class="albums-container">
                 <?php foreach ($albums as $album) {
+                    if (!empty($_GET)) {
+                        if (strtolower($_GET["genre"]) == strtolower($album["genre"])) {
                 ?>
-                    <div class="album">
-                        <div class="cover-container">
-                            <img src="<?php echo $album["poster"]; ?>" alt="">
+                            <div class="album">
+                                <div class="cover-container">
+                                    <img src="<?php echo $album["poster"]; ?>" alt="">
+                                </div>
+                                <div class="specs">
+                                    <div class="title">
+                                        <strong> <?php echo $album["title"] ?> </strong>
+                                    </div>
+                                    <div class="artist">
+                                        <?php echo  $album["author"] ?>
+                                    </div>
+                                    <div class="year">
+                                        <?php echo $album["year"] ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                        }
+                    } else {
+                        ?>
+                        <div class="album">
+                            <div class="cover-container">
+                                <img src="<?php echo $album["poster"]; ?>" alt="">
+                            </div>
+                            <div class="specs">
+                                <div class="title">
+                                    <strong> <?php echo $album["title"] ?> </strong>
+                                </div>
+                                <div class="artist">
+                                    <?php echo  $album["author"] ?>
+                                </div>
+                                <div class="year">
+                                    <?php echo $album["year"] ?>
+                                </div>
+                            </div>
                         </div>
-                        <div class="specs">
-                            <div class="title">
-                                <strong> <?php echo $album["title"] ?> </strong>
-                            </div>
-                            <div class="artist">
-                                <?php echo  $album["author"] ?>
-                            </div>
-                            <div class="year">
-                                <?php echo $album["year"] ?>
-                            </div>
-                        </div>
-                    </div>
                 <?php
+                    }
                 }
                 ?>
             </div>
