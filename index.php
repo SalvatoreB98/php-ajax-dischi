@@ -36,6 +36,7 @@ include "data.php"
                     <button class="btn">Filtra</button>
                 </form>
             </div>
+            <div> <?php echo $_GET['genre'] ?>: </div>
             <div class="albums-container">
                 <?php foreach ($albums as $album) {
                     if (!empty($_GET)) {
